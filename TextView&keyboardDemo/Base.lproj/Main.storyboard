@@ -60,15 +60,27 @@
                                     <constraint firstAttribute="bottom" secondItem="C0W-3Y-VX5" secondAttribute="bottom" constant="8" id="hTv-lj-Gk5"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dti-Yw-6hH">
+                                <rect key="frame" x="175" y="265" width="250" height="70"/>
+                                <color key="backgroundColor" red="0.24926448909999999" green="0.82875252489999995" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="40"/>
+                                <state key="normal" title="清除内容"/>
+                                <connections>
+                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMh-4g-l99"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="fo0-e9-G9V" secondAttribute="trailing" constant="-20" id="2bP-kt-M1D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dti-Yw-6hH" secondAttribute="trailing" constant="35" id="Gcf-nm-u7B"/>
                             <constraint firstItem="g3R-qV-WQT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Jub-gO-y3V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fo0-e9-G9V" secondAttribute="trailing" constant="-20" id="PlD-cE-El9"/>
                             <constraint firstItem="fo0-e9-G9V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dPr-7h-hDb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fo0-e9-G9V" secondAttribute="bottom" id="gRE-Xx-C4H"/>
                             <constraint firstItem="fo0-e9-G9V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jMG-gb-2Nf"/>
+                            <constraint firstItem="Dti-Yw-6hH" firstAttribute="top" secondItem="g3R-qV-WQT" secondAttribute="bottom" constant="43" id="tTK-QG-ew2"/>
+                            <constraint firstItem="Dti-Yw-6hH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="uI4-63-nCi"/>
                             <constraint firstItem="g3R-qV-WQT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vAN-bo-tL0"/>
                             <constraint firstItem="g3R-qV-WQT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xrk-Td-y8V"/>
                         </constraints>
@@ -81,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="349"/>
+            <point key="canvasLocation" x="3" y="58"/>
         </scene>
     </scenes>
 </document>

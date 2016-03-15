@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         textViewInput.resignFirstResponder()
 
     }
+    @IBAction func clearButton(sender: AnyObject) {
+        textView.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,13 @@ class ViewController: UIViewController {
         let menu = UIMenuController()
         //将item添加到menu里
         menu.menuItems = [mail, weixin]
+        //给文字中的电话号码和网址\地址\日历自动加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.None //都不加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.Address //只有地址加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.CalendarEvent //只有日历事件加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.Link //只有网站加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.PhoneNumber // 只有电话号码加链接
+        textView.dataDetectorTypes = UIDataDetectorTypes.All //全部都加链接
         
         // Do any additional setup after loading the view, typically from a nib.
         NSNotificationCenter.defaultCenter().addObserver(self,
