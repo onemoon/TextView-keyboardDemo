@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     @IBOutlet var textView: UITextView!
@@ -23,14 +23,22 @@ class ViewController: UIViewController {
         textViewInput.text = ""
         //发送后键盘隐藏
         textViewInput.resignFirstResponder()
+        print(textViewInput.frame)
 
     }
     @IBAction func clearButton(sender: AnyObject) {
         textView.text = ""
     }
+    @IBOutlet weak var toolbarView: UIView!
+    
+    var heightText: Double?
+    //字体名称和大小
+    let dict = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 20)!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         //设置圆角
         textView.layer.cornerRadius = 6
         textViewInput.layer.cornerRadius = 6
@@ -49,12 +57,20 @@ class ViewController: UIViewController {
         //textView.dataDetectorTypes = UIDataDetectorTypes.CalendarEvent //只有日历事件加链接
         //textView.dataDetectorTypes = UIDataDetectorTypes.Link //只有网站加链接
         //textView.dataDetectorTypes = UIDataDetectorTypes.PhoneNumber // 只有电话号码加链接
-        textView.dataDetectorTypes = UIDataDetectorTypes.All //全部都加链接
+        //textView.dataDetectorTypes = UIDataDetectorTypes.All //全部都加链接
         
         // Do any additional setup after loading the view, typically from a nib.
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "keyboardWillChange:",
             name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        //动态改变textViewInput的高度, 但是view的高度没有改变
+        textViewInput.scrollEnabled = false
+        let fixedWidth = CGFloat(263)
+        let newSize = textViewInput.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        var newFrame = textViewInput.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textViewInput.frame = newFrame
     }
     
     func onMail() {
@@ -76,7 +92,6 @@ class ViewController: UIViewController {
                 
                 //改变下约束
                 self.bottomConstraint.constant = CGRectGetHeight(intersection)
-                print(bottomConstraint.constant)
                 
                 UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions(rawValue: curve), animations: { _ in
                     
@@ -85,7 +100,6 @@ class ViewController: UIViewController {
                     }, completion: nil)
         }
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

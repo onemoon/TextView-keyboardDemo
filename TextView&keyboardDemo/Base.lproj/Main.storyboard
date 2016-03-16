@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="C0W-3Y-VX5">
-                                        <rect key="frame" x="55" y="9" width="481" height="30"/>
+                                        <rect key="frame" x="55" y="9" width="480" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -56,7 +56,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6M8-S6-UvF" secondAttribute="trailing" constant="15" id="Ckv-zf-tdQ"/>
                                     <constraint firstItem="C0W-3Y-VX5" firstAttribute="leading" secondItem="fo0-e9-G9V" secondAttribute="leading" constant="55" id="RAs-uH-tmy"/>
-                                    <constraint firstAttribute="trailing" secondItem="C0W-3Y-VX5" secondAttribute="trailing" constant="64" id="aOg-1p-J8k"/>
+                                    <constraint firstAttribute="trailing" secondItem="C0W-3Y-VX5" secondAttribute="trailing" constant="65" id="aOg-1p-J8k"/>
                                     <constraint firstAttribute="bottom" secondItem="C0W-3Y-VX5" secondAttribute="bottom" constant="8" id="hTv-lj-Gk5"/>
                                 </constraints>
                             </view>
@@ -89,6 +89,7 @@
                         <outlet property="bottomConstraint" destination="gRE-Xx-C4H" id="geg-qO-hnb"/>
                         <outlet property="textView" destination="g3R-qV-WQT" id="Qx1-Df-ZBl"/>
                         <outlet property="textViewInput" destination="C0W-3Y-VX5" id="A7Z-2Q-Kb8"/>
+                        <outlet property="toolbarView" destination="fo0-e9-G9V" id="gMl-bl-vkf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
